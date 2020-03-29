@@ -6,8 +6,8 @@ import praw
 
 def main():
     backup_directory = "C:\\Temp\\Reddit.ImageBackup.Test"
-    reddit = praw.Reddit('ImageBackup-Bot', user_agent='script:Reddit.ImageBackup:v1.0.0 (by /u/gaben38)')
-    subreddit = reddit.subreddit('smuggies')
+    reddit = praw.Reddit('ImageBackup-Bot', config_interpolation="basic")
+    subreddit = reddit.subreddit("smuggies")
     subreddit.quaran.opt_in()
     for submission in subreddit.hot(limit=10):
         if submission.stickied:
